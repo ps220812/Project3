@@ -20,6 +20,10 @@ $db = new VerkiezingenDB();
         <li><a href="./themas.php">Thema's</a></li>
         <li><a href="./kieswijzer.php">Kieswijzer</a></li>
     </ul>
-</body>
+<h1>Stemwijzer</h1>
 
+<p>Welkom op de stemwijzer. Deze pagina is bedoelt om u te helpen met het maken van uw keuze tijdens de verkiezingen.</p>
+
+
+</body>
 </html>

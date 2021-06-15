@@ -8,10 +8,10 @@ namespace Project3_WPF
     /// <summary>
     /// Interaction logic for standputten_Page.xaml
     /// </summary>
-    public partial class standputten_Page : Page
+    public partial class standpunten_Page : Page
     {
         Project3DB _DataBase = new Project3DB();
-        public standputten_Page()
+        public standpunten_Page()
         {
             InitializeComponent();
             ShowThemas();

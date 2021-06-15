@@ -36,11 +36,11 @@
             </Grid.RowDefinitions>
 
             <StackPanel>
-                <TextBlock Text="Partij Name:" FontSize="15"/>
+                <TextBlock Text="Partij Naam:" FontSize="15"/>
                 <TextBox Height="30" x:Name="naam"/>
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Adress:" FontSize="15"/>
+                <TextBlock Text="Adres:" FontSize="15"/>
                 <TextBox Height="30" x:Name="adress"/>
             </StackPanel>
             <StackPanel Grid.Row="2">

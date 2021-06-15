@@ -35,7 +35,7 @@ namespace Project3_WPF
 
         private void Btn_standpunt_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Content = new standputten_Page();
+            mainFrame.Content = new standpunten_Page();
             Title.Content = "Standpunten";
         }
 
