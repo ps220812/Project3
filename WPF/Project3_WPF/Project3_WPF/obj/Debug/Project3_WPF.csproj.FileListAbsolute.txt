@@ -29,3 +29,5 @@ C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\bin\Debug\MySql.D
 C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Partijen_Page.g.cs
 C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Partijen_Page.baml
 C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.csproj.CopyComplete
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standputten_Page.g.cs
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standputten_Page.baml

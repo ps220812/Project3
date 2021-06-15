@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using Project3_WPF.classes;
+
 
 namespace Project3_WPF
 {
@@ -20,9 +23,26 @@ namespace Project3_WPF
     /// </summary>
     public partial class Partijen_Page : Page
     {
+        Project3DB Pj_DB = new Project3DB();
+
         public Partijen_Page()
         {
             InitializeComponent();
+            FillDataTable();
+        }
+
+        public void FillDataTable()
+        {
+            DataTable students = Pj_DB.SelectedPartij();
+            if (students != null)
+            {
+                dgStudents.ItemsSource = students.DefaultView;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            standputten_Page p = new standputten_Page();
         }
     }
 }

@@ -24,11 +24,24 @@ namespace Project3_WPF
         {
             InitializeComponent();
             mainFrame.Content = new Partijen_Page();
+            Title.Content = "Partijen";
         }
 
         private void Btn_partijen_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new Partijen_Page();
+            Title.Content = "Partijen";
+        }
+
+        private void Btn_standpunt_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new standputten_Page();
+            Title.Content = "Standpunten";
+        }
+
+        public void HideWindow()
+        {
+            this.Close();
         }
     }
 }
