@@ -12,6 +12,11 @@ $db = new VerkiezingenDB();
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+<ul>
+        <li><a href="./home.php">Home</a></li>
+        <li><a href="./partijen.php">Partijen</a></li>
+        <li><a class="active" href="./themas.php">Thema's</a></li>
+        <li><a href="./kieswijzer.php">Kieswijzer</a></li>
+    </ul>
 </body>
 </html>
