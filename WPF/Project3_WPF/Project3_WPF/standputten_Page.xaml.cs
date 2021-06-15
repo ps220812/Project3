@@ -37,9 +37,10 @@ namespace Project3_WPF
         private void ShowThemas()
         {
             DataTable Themas = _DataBase.SelectedThemas();
+            DataTable Partij = _DataBase.SelectedPartij();
 
             cmbThema.ItemsSource = Themas.DefaultView;
-
+            cmbPartij.ItemsSource = Partij.DefaultView;
         }
     }
 }
