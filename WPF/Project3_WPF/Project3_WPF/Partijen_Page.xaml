@@ -37,30 +37,30 @@
 
             <StackPanel>
                 <TextBlock Text="Partij Name:" FontSize="15"/>
-                <TextBox Height="30"/>
+                <TextBox Height="30" x:Name="naam"/>
             </StackPanel>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Adress:" FontSize="15"/>
-                <TextBox Height="30"/>
+                <TextBox Height="30" x:Name="adress"/>
             </StackPanel>
             <StackPanel Grid.Row="2">
                 <TextBlock Text="Postcode:" FontSize="15"/>
-                <TextBox Height="30"/>
+                <TextBox Height="30" x:Name="postcode"/>
             </StackPanel>
             <StackPanel Grid.Row="3">
                 <TextBlock Text="Gemeente:" FontSize="15"/>
-                <TextBox Height="30"/>
+                <TextBox Height="30" x:Name="gemeente"/>
             </StackPanel>
             <StackPanel Grid.Row="4">
                 <TextBlock Text="Email Adres:" FontSize="15"/>
-                <TextBox Height="30"/>
+                <TextBox Height="30" x:Name="email"/>
             </StackPanel>
             <StackPanel Grid.Row="5">
                 <TextBlock Text="Telefoonnummer:" FontSize="15"/>
-                <TextBox Height="30"/>
+                <TextBox Height="30" x:Name="telefoonnummer"/>
             </StackPanel>
 
-            <Button Grid.Row="7" Height="40" Background="Green" FontSize="20" Foreground="White" Content="Toevoegen" Click="Button_Click"/>
+            <Button x:Name="Btn_ToevoegenPartij" Grid.Row="7" Height="40" Background="Green" FontSize="20" Foreground="White" Content="Toevoegen" Click="Btn_ToevoegenPartij_Click" />
 
         </Grid>
 

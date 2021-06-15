@@ -40,9 +40,17 @@ namespace Project3_WPF
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_ToevoegenPartij_Click(object sender, RoutedEventArgs e)
         {
-            standputten_Page p = new standputten_Page();
+            Project3DB partij = new Project3DB();
+            if (partij.InsertPartij(naam.Text.ToString(),adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
+            {
+                FillDataTable();
+            }
+            else
+            {
+                MessageBox.Show("Aanmaken mislukt");
+            }
         }
     }
 }
