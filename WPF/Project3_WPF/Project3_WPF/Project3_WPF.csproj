@@ -62,6 +62,9 @@
     <Compile Include="Themas_Page.xaml.cs">
       <DependentUpon>Themas_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VerkiezingSoort_Page.xaml.cs">
+      <DependentUpon>VerkiezingSoort_Page.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themas_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VerkiezingSoort_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

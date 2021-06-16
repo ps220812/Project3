@@ -28,9 +28,8 @@
                 <RowDefinition Height="12*"/>
                 <RowDefinition Height="15*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="10*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="15*"/>
                 <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
 
@@ -43,10 +42,10 @@
                 <Label Content="Thema" FontSize="15" />
                 <ComboBox x:Name="cmbThema" DisplayMemberPath="Thema" SelectedValuePath="id" Height="35"/>
             </StackPanel>
-            <StackPanel Grid.Row="4">
-                <TextBlock Text="Standpunt:" FontSize="15"/>
-                <TextBox Height="30"/>
-            </StackPanel>
+            
+                <TextBlock Text="Standpunt:" Grid.Row="3" FontSize="15"/>
+                <TextBox Grid.Row="4" TextWrapping="WrapWithOverflow" />
+            
             
 
             <Button x:Name="Toevoegen" Grid.Row="7" Height="40" Background="Green" FontSize="20" Foreground="White" Content="Toevoegen" Click="Toevoegen_Click"/>

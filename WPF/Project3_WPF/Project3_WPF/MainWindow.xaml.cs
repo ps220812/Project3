@@ -42,7 +42,12 @@ namespace Project3_WPF
         private void Btn_themas_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new Themas_Page();
-            Title.Content = "Standpunten";
+            Title.Content = "thema's";
+        }
+        private void Btn_verkiezingsoort_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new VerkiezingSoort_Page();
+            Title.Content = "verkiezingsoorten";
         }
         public void HideWindow()
         {

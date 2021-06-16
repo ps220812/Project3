@@ -18,31 +18,32 @@ using System.Windows.Shapes;
 namespace Project3_WPF
 {
     /// <summary>
-    /// Interaction logic for Themas.xaml
+    /// Interaction logic for VerkiezingsSoort_Page.xaml
     /// </summary>
-    public partial class Themas_Page : Page
+    public partial class VerkiezingSoort_Page : Page
     {
         Project3DB _DataBase = new Project3DB();
-        public Themas_Page()
+        public VerkiezingSoort_Page()
         {
             InitializeComponent();
             FillDataTable();
         }
         public void FillDataTable()
         {
-            DataTable themas = _DataBase.SelectedThemas();
-            if (themas != null)
+            DataTable verkiezingsoort = _DataBase.SelectedVerkiezingSoort();
+            if (verkiezingsoort != null)
             {
-                dgThemas.ItemsSource = themas.DefaultView;
+                dgVerkiezingSoort.ItemsSource = verkiezingsoort.DefaultView;
             }
         }
         private void Toevoegen_Click(object sender, RoutedEventArgs e)
         {
-            Project3DB thema = new Project3DB();
-            DataRowView selectedRow = dgThemas.SelectedItem as DataRowView;
+            Project3DB verkiezingsoort = new Project3DB();
+            DataRowView selectedRow = dgVerkiezingSoort.SelectedItem as DataRowView;
+
             if (Toevoegen.Content.ToString() == "Toevoegen")
             {
-                if (thema.insertThema(tbThema.Text.ToString()))
+                if (verkiezingsoort.insertVerkiezingsoort(tbVerkiezingSoort.Text.ToString()))
                 {
                     FillDataTable();
                 }
@@ -51,9 +52,9 @@ namespace Project3_WPF
                     MessageBox.Show("Aanmaken mislukt");
                 }
             }
-            else if(Toevoegen.Content.ToString() == "Wijzigen")
+            else if (Toevoegen.Content.ToString() == "Wijzigen")
             {
-                if (thema.updateThema(tbThema.Text.ToString(), selectedRow["ThemaId"].ToString()))
+                if (verkiezingsoort.updateVerkiezingsoort(tbVerkiezingSoort.Text.ToString(), selectedRow["SoortId"].ToString()))
                 {
                     FillDataTable();
                     Toevoegen.Content = "Toevoegen";
@@ -64,18 +65,17 @@ namespace Project3_WPF
                 }
             }
         }
-
         private void Verwijder_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView selectedRow = dgThemas.SelectedItem as DataRowView;
+            DataRowView selectedRow = dgVerkiezingSoort.SelectedItem as DataRowView;
 
-            if (_DataBase.deleteThema(selectedRow["ThemaId"].ToString()))
+            if (_DataBase.deleteVerkiezingsoort(selectedRow["SoortId"].ToString()))
             {
-                MessageBox.Show($"Thema {selectedRow["ThemaId"]} verwijderd");
+                MessageBox.Show($"Verkiezingsoort {selectedRow["SoortId"]} verwijderd");
             }
             else
             {
-                MessageBox.Show($"Verwijderen van {selectedRow["Themaid"]} mislukt");
+                MessageBox.Show($"Verwijderen van {selectedRow["SoortId"]} mislukt");
             }
 
             FillDataTable();
@@ -85,10 +85,9 @@ namespace Project3_WPF
         {
             Toevoegen.Content = "Wijzigen";
         }
-
-        private void tbThema_GotFocus(object sender, RoutedEventArgs e)
+        private void tbVerkiezingSoort_GotFocus(object sender, RoutedEventArgs e)
         {
-            tbThema.Text = "";
+            tbVerkiezingSoort.Text = "";
         }
     }
 }
