@@ -59,6 +59,9 @@
     <Compile Include="standpunten_Page.xaml.cs">
       <DependentUpon>standpunten_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Themas_Page.xaml.cs">
+      <DependentUpon>Themas_Page.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="standpunten_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themas_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -49,13 +49,11 @@ C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\bin\Debug\MySql.Data.xm
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.csprojAssemblyReference.cache
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\MainWindow.g.cs
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Partijen_Page.g.cs
-C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standputten_Page.g.cs
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\App.g.cs
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF_MarkupCompile.cache
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF_MarkupCompile.lref
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\MainWindow.baml
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Partijen_Page.baml
-C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standputten_Page.baml
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.g.resources
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.Properties.Resources.resources
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.csproj.GenerateResource.cache
@@ -63,3 +61,7 @@ C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.csproj.CopyComplete
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.exe
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.pdb
+C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standpunten_Page.g.cs
+C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standpunten_Page.baml
+C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Themas_Page.g.cs
+C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Themas_Page.baml

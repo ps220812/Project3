@@ -55,7 +55,28 @@ namespace Project3_WPF.classes
         // End here
 
         // Here start the inserts in Database table functions
+        public bool insertThema(string thema)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "INSERT INTO `thema`(`ThemaId`, `Thema`) VALUES (NULL, @thema)";
+                command.Parameters.AddWithValue("@thema", thema);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch (System.Exception)
+            {
 
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
         public bool InsertPartij(string naam, string adress, string postcode, string gemeente, string email, string telefoonnummer)
         {
             bool result = false;

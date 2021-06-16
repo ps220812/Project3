@@ -39,6 +39,11 @@ namespace Project3_WPF
             Title.Content = "Standpunten";
         }
 
+        private void Btn_themas_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new Themas_Page();
+            Title.Content = "Standpunten";
+        }
         public void HideWindow()
         {
             this.Close();

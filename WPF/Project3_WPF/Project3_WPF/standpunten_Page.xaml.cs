@@ -14,7 +14,7 @@ namespace Project3_WPF
         public standpunten_Page()
         {
             InitializeComponent();
-            ShowThemas();
+            ShowStandpunten();
         }
 
         private void Toevoegen_Click(object sender, RoutedEventArgs e)
@@ -34,7 +34,7 @@ namespace Project3_WPF
 
         }
 
-        private void ShowThemas()
+        private void ShowStandpunten()
         {
             DataTable Themas = _DataBase.SelectedThemas();
             DataTable Partij = _DataBase.SelectedPartij();

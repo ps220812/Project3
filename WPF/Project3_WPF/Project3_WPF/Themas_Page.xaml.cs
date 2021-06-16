@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Project3_WPF.classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,38 +14,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data;
-using Project3_WPF.classes;
-
 
 namespace Project3_WPF
 {
     /// <summary>
-    /// Interaction logic for Partijen_Page.xaml
+    /// Interaction logic for Themas.xaml
     /// </summary>
-    public partial class Partijen_Page : Page
+    public partial class Themas_Page : Page
     {
-        Project3DB _Database = new Project3DB();
-
-        public Partijen_Page()
+        Project3DB _DataBase = new Project3DB();
+        public Themas_Page()
         {
             InitializeComponent();
             FillDataTable();
         }
-
         public void FillDataTable()
         {
-            DataTable Partijen = _Database.SelectedPartij();
-            if (Partijen != null)
+            DataTable themas = _DataBase.SelectedThemas();
+            if (themas != null)
             {
-                dgStudents.ItemsSource = Partijen.DefaultView;
+                dgThemas.ItemsSource = themas.DefaultView;
             }
         }
-
-        private void Btn_ToevoegenPartij_Click(object sender, RoutedEventArgs e)
+        private void Toevoegen_Click(object sender, RoutedEventArgs e)
         {
-            Project3DB partij = new Project3DB();
-            if (partij.InsertPartij(naam.Text.ToString(),adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
+            Project3DB thema = new Project3DB();
+            if (thema.insertThema(tbThema.Text.ToString()))
             {
                 FillDataTable();
             }
