@@ -64,7 +64,7 @@
 
         </Grid>
 
-        <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dgStudents" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
+        <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dbTabelPartij" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding PartijId}"  Header="id"/>
                 <DataGridTextColumn Binding="{Binding PartijName}"  Header="Partij naam"/>
@@ -76,14 +76,14 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Wijzig" x:Name="Wijzig"/>
+                            <Button Content="Wijzig" x:Name="Wijzig" Click="Wijzig_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Verwijder" x:Name="Verwijder" />
+                            <Button Content="Verwijder" x:Name="Verwijder" Click="Verwijder_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

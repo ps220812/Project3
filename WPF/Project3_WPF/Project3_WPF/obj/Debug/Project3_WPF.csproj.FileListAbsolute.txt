@@ -29,8 +29,6 @@ C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\bin\Debug\MySql.D
 C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Partijen_Page.g.cs
 C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Partijen_Page.baml
 C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Project3_WPF.csproj.CopyComplete
-C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standputten_Page.g.cs
-C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standputten_Page.baml
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\bin\Debug\Project3_WPF.exe.config
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\bin\Debug\Project3_WPF.exe
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\bin\Debug\Project3_WPF.pdb
@@ -67,3 +65,9 @@ C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Themas_Page.g
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Themas_Page.baml
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\VerkiezingSoort_Page.g.cs
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\VerkiezingSoort_Page.baml
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standpunten_Page.g.cs
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Themas_Page.g.cs
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\VerkiezingSoort_Page.g.cs
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\standpunten_Page.baml
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\Themas_Page.baml
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\VerkiezingSoort_Page.baml

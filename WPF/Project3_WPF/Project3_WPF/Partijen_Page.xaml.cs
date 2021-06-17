@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Project3_WPF.classes;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data;
-using Project3_WPF.classes;
 
 
 namespace Project3_WPF
@@ -36,20 +24,78 @@ namespace Project3_WPF
             DataTable Partijen = _Database.SelectedPartij();
             if (Partijen != null)
             {
-                dgStudents.ItemsSource = Partijen.DefaultView;
+                dbTabelPartij.ItemsSource = Partijen.DefaultView;
             }
         }
 
         private void Btn_ToevoegenPartij_Click(object sender, RoutedEventArgs e)
         {
             Project3DB partij = new Project3DB();
-            if (partij.InsertPartij(naam.Text.ToString(),adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
+            DataRowView partijView = dbTabelPartij.SelectedItem as DataRowView;
+
+            if (Btn_ToevoegenPartij.Content.ToString() == "Toevoegen")
             {
+                if (partij.InsertPartij(naam.Text.ToString(), adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
+                {
+                    FillDataTable();
+                }
+                else
+                {
+                    MessageBox.Show("Aanmaken mislukt");
+                }
+                ClearTextBox();
+            }
+            if (Btn_ToevoegenPartij.Content.ToString() == "Weizig")
+            {
+                if (partij.UpdatePartij(partijView["PartijId"].ToString(),naam.Text.ToString(), adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
+                {
+                    FillDataTable();
+                }
+                else
+                {
+                    MessageBox.Show("Aanmaken mislukt");
+                }
+                Btn_ToevoegenPartij.Content = "Toevoegen";
+                ClearTextBox();
+            }
+
+
+        }
+
+        private void Wijzig_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView partijView = dbTabelPartij.SelectedItem as DataRowView;
+            naam.Text = partijView["PartijName"].ToString();
+            adress.Text = partijView["Adres"].ToString();
+            postcode.Text = partijView["Postcode"].ToString();
+            gemeente.Text = partijView["Gemeente"].ToString();
+            email.Text = partijView["EmailAdres"].ToString();
+            telefoonnummer.Text = partijView["Telefoonnummer"].ToString();
+
+            Btn_ToevoegenPartij.Content = "Weizig";
+        }
+
+        private void ClearTextBox()
+        {
+            naam.Text = "";
+            adress.Text = "";
+            postcode.Text = "";
+            gemeente.Text = "";
+            email.Text = "";
+            telefoonnummer.Text = "";
+        }
+
+        private void Verwijder_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedPartij = dbTabelPartij.SelectedItem as DataRowView;
+            if (_Database.deletePartij(selectedPartij["PartijId"].ToString()))
+            {
+                MessageBox.Show($"Partij {selectedPartij["PartijName"]} verwijderd");
                 FillDataTable();
             }
             else
             {
-                MessageBox.Show("Aanmaken mislukt");
+                MessageBox.Show($"Partij {selectedPartij["PartijName"]} verwijderd mislukt");
             }
         }
     }
