@@ -49,6 +49,11 @@ namespace Project3_WPF
             mainFrame.Content = new VerkiezingSoort_Page();
             Title.Content = "verkiezingsoorten";
         }
+        private void Btn_verkiezing_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new verkiezing_Page();
+            Title.Content = "verkiezing";
+        }
         public void HideWindow()
         {
             this.Close();

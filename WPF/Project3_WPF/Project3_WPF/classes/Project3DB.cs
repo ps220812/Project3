@@ -31,6 +31,28 @@ namespace Project3_WPF.classes
 
             return result;
         }
+        public DataTable SelectedVerkiezing()
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "SELECT * FROM verkiezing;";
+                MySqlDataReader reader = command.ExecuteReader();
+                result.Load(reader);
+            }
+            catch (System.Exception)
+            {
+
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return result;
+        }
 
         public DataTable SelectedStandpunten()
         {
@@ -198,7 +220,31 @@ namespace Project3_WPF.classes
             return result;
 
         }
+        public bool InsertVerkiezing(string soortid, string verkiezingsoort, string Datum)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "INSERT INTO `verkiezing` (`VerkiezingId`, `SoortId`, `Verkiezingsoort`, `Datum`) VALUES (NULL, @soortId, '@verkiezingsoort', '@datum');";
+                command.Parameters.AddWithValue("@soortId", soortid);
+                command.Parameters.AddWithValue("@verkiezingsoort", verkiezingsoort);
+                command.Parameters.AddWithValue("@datum", Datum);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch (Exception)
+            {
 
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return result;
+        }
         public bool InsertStandpunt(string PartijId,string Partij,string ThemaId,string Thema, string Standpunt)
         {
             bool result = false;
@@ -332,6 +378,31 @@ namespace Project3_WPF.classes
             }
             return result;
         }
+        public bool updateVerkiezing(string verkiezingId, string soortId, string verkiezingsoort, string datum)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "UPDATE `verkiezing` SET `Verkiezingsoort`= @verkiezingsoort,`SoortId` = @soortId, `Datum` = @datum WHERE `VerkiezingId` = @verkiezingId";
+                command.Parameters.AddWithValue("@verkiezingId", verkiezingId);
+                command.Parameters.AddWithValue("@soortId", soortId);
+                command.Parameters.AddWithValue("@verkiezingsoort", verkiezingsoort);
+                command.Parameters.AddWithValue("@datum", datum);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch (System.Exception)
+            {
+                //Problem with the database
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
 
         public bool UpdateStandpunt(string id,string PartijId,string Partij,string ThemaId,string Thema,string Standpunt)
         {
@@ -396,6 +467,28 @@ namespace Project3_WPF.classes
                 MySqlCommand command = _connection.CreateCommand();
                 command.CommandText = "DELETE FROM `verkiezingsoort` WHERE `SoortId` = @soortId;";
                 command.Parameters.AddWithValue("@soortId", soortId);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
+        public bool deleteVerkiezing(string verkiezingId)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "DELETE FROM `verkiezing` WHERE `VerkiezingId` = @verkiezingId;";
+                command.Parameters.AddWithValue("@verkiezingId", verkiezingId);
                 int nrOfRowsAffected = command.ExecuteNonQuery();
                 result = (nrOfRowsAffected != 0);
             }

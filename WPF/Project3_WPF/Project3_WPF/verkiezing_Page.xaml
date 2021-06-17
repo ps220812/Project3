@@ -1,0 +1,65 @@
+﻿<Page x:Class="Project3_WPF.verkiezing_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project3_WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="verkiezing_Page" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Verkiezing:" FontSize="15"/>
+                <ComboBox x:Name="cbVerkiezing" DisplayMemberPath="Verkiezingsoort" SelectedValuePath="SoortId" Height="35"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Datum:" FontSize="15"/>
+                <TextBox x:Name="tbDatum" Height="30" GotFocus="tbDatum_GotFocus" />
+            </StackPanel>
+            <Button x:Name="Toevoegen" Grid.Row="3" Height="40" Background="Green" FontSize="20" Foreground="White" Content="Toevoegen" Click="Toevoegen_Click"/>
+        </Grid>
+
+        <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dgVerkiezing" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding VerkiezingId}"  Header="VerkiezingId"/>
+                <DataGridTextColumn Binding="{Binding SoortId}"  Header="SoortId"/>
+                <DataGridTextColumn Binding="{Binding Verkiezingsoort}"  Header="VerkiezingSoort"/>
+                <DataGridTextColumn Binding="{Binding Datum}"  Header="Datum"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Wijzig" x:Name="Wijzig" Click="Wijzig_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Verwijder" x:Name="Verwijder" Click="Verwijder_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

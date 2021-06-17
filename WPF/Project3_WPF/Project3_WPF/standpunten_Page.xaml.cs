@@ -48,7 +48,7 @@ namespace Project3_WPF
                 }
 
             }
-            else if (Toevoegen.Content.ToString() == "Weizig")
+            else if (Toevoegen.Content.ToString() == "Wijzigen")
             {
                 if (_DataBase.UpdateStandpunt(standpuntView["StandpuntId"].ToString(),cmbPartij.SelectedValue.ToString(),cmbPartij.Text,cmbThema.SelectedValue.ToString(),cmbThema.Text,tbStandpunt.Text))
                 {
@@ -83,7 +83,7 @@ namespace Project3_WPF
             cmbPartij.Text = standpuntView["PartijName"].ToString();
             cmbThema.Text = standpuntView["Thema"].ToString();
             tbStandpunt.Text = standpuntView["Standpunt"].ToString();
-            Toevoegen.Content = "Weizig";
+            Toevoegen.Content = "Wijzigen";
         }
 
         private void Verwijder_Click(object sender, RoutedEventArgs e)
