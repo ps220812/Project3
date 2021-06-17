@@ -53,5 +53,10 @@ namespace Project3_WPF
         {
             this.Close();
         }
-    }
+
+        private void Btn_verkiezingpartijen_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new verkiezingspartijen( );
+        }
+    } 
 }

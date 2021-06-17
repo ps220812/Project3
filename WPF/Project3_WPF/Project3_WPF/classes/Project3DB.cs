@@ -97,6 +97,27 @@ namespace Project3_WPF.classes
 
             return result;
         }
+        public DataTable SelectedVerkiezingsPartijen()
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "SELECT * FROM verkiezingspartijen;";
+                MySqlDataReader reader = command.ExecuteReader();
+                result.Load(reader);
+            }
+            catch (System.Exception)
+            {
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return result;
+        }
         // End here
         #endregion
         #region INSERT function
@@ -191,6 +212,31 @@ namespace Project3_WPF.classes
                 command.Parameters.AddWithValue("@TId", ThemaId);
                 command.Parameters.AddWithValue("@T", Thema);
                 command.Parameters.AddWithValue("@S", Standpunt);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return result;
+        }
+
+        public bool InsertVerkiezingsPartijen(string PartijId, string VerkiezingsId)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "INSERT INTO `verkiezingspartijen`(`PartijId`, `VerkiezingId`) VALUES (@PId,@VId)";
+                command.Parameters.AddWithValue("@PId", PartijId);
+                command.Parameters.AddWithValue("@VId", VerkiezingsId);
                 int nrOfRowsAffected = command.ExecuteNonQuery();
                 result = (nrOfRowsAffected != 0);
             }

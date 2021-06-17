@@ -29,7 +29,7 @@
             <Button FontSize="20" Width="170" Height="40" x:Name="Btn_themas" Click="Btn_themas_Click" Margin="0,10,0,0">Thema's</Button>
             <Button FontSize="20" Width="170" Height="40" x:Name="Btn_verkiezing" Margin="0,10,0,0">Verkiezingen</Button>
             <Button FontSize="20" Width="170" Height="40" x:Name="Btn_verkiezingsoort" Click="Btn_verkiezingsoort_Click" Margin="0,10,0,0">Verkiezingsoorten</Button>
-            <Button FontSize="20" Width="170" Height="40" x:Name="Btn_verkiezingpartijen" Margin="0,10,0,0">Verkiezingpartijen</Button>
+            <Button FontSize="20" Width="170" Height="40" x:Name="Btn_verkiezingpartijen" Margin="0,10,0,0" Click="Btn_verkiezingpartijen_Click">Verkiezingpartijen</Button>
         </StackPanel>
 
         <Frame Grid.Row="2" Grid.Column="2" x:Name="mainFrame" NavigationUIVisibility="Hidden"  />
