@@ -38,6 +38,8 @@ namespace Project3_WPF
                     MessageBox.Show("gelukt");
                     FillDataTable();
                     tbStandpunt.Text = "";
+                    cmbPartij.SelectedIndex = -1;
+                    cmbThema.SelectedIndex = -1;
                 }
                 else
                 {
@@ -55,6 +57,7 @@ namespace Project3_WPF
                     tbStandpunt.Text = "";
                     cmbPartij.SelectedIndex = -1;
                     cmbThema.SelectedIndex = -1;
+                    Toevoegen.Content = "Toevoegen";
                 }
                 else
                 {
