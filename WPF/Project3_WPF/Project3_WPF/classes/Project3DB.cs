@@ -227,7 +227,7 @@ namespace Project3_WPF.classes
             {
                 _connection.Open();
                 MySqlCommand command = _connection.CreateCommand();
-                command.CommandText = "INSERT INTO `verkiezing` (`VerkiezingId`, `SoortId`, `Verkiezingsoort`, `Datum`) VALUES (NULL, @soortId, '@verkiezingsoort', '@datum');";
+                command.CommandText = "INSERT INTO `verkiezing` (`VerkiezingId`, `SoortId`, `Verkiezingsoort`, `Datum`) VALUES (NULL, @soortId, @verkiezingsoort, @datum);";
                 command.Parameters.AddWithValue("@soortId", soortid);
                 command.Parameters.AddWithValue("@verkiezingsoort", verkiezingsoort);
                 command.Parameters.AddWithValue("@datum", Datum);
@@ -385,7 +385,7 @@ namespace Project3_WPF.classes
             {
                 _connection.Open();
                 MySqlCommand command = _connection.CreateCommand();
-                command.CommandText = "UPDATE `verkiezing` SET `Verkiezingsoort`= @verkiezingsoort,`SoortId` = @soortId, `Datum` = @datum WHERE `VerkiezingId` = @verkiezingId";
+                command.CommandText = "UPDATE `verkiezing` SET `SoortId` = @soortId,`Verkiezingsoort`= @verkiezingsoort, `Datum` = @datum WHERE `VerkiezingId` = @verkiezingId";
                 command.Parameters.AddWithValue("@verkiezingId", verkiezingId);
                 command.Parameters.AddWithValue("@soortId", soortId);
                 command.Parameters.AddWithValue("@verkiezingsoort", verkiezingsoort);

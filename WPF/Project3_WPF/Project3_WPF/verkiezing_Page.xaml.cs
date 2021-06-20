@@ -1,19 +1,9 @@
 ﻿using Project3_WPF.classes;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Project3_WPF
 {
@@ -22,84 +12,92 @@ namespace Project3_WPF
     /// </summary>
     public partial class verkiezing_Page : Page
     {
-        Project3DB _DataBase = new Project3DB();
+        Project3DB _dataBase = new Project3DB();
+
         public verkiezing_Page()
         {
             InitializeComponent();
             FillDataTable();
-            ShowVerkiezing();
+            FillComboBoxVerkiezing();
+
+            CultureInfo ci = CultureInfo.CreateSpecificCulture(CultureInfo.CurrentCulture.Name);
+            ci.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
+            Thread.CurrentThread.CurrentCulture = ci;
         }
+
         public void FillDataTable()
         {
-            DataTable verkiezing = _DataBase.SelectedVerkiezing();
+            DataTable verkiezing = _dataBase.SelectedVerkiezing();
             if (verkiezing != null)
             {
-                dgVerkiezing.ItemsSource = verkiezing.DefaultView;
+                dbVerkiezing.ItemsSource = verkiezing.DefaultView;
             }
         }
+
+        public void FillComboBoxVerkiezing()
+        {
+            DataTable _cmbVerkiezing = _dataBase.SelectedVerkiezingSoort();
+            cmbVerkiezing.ItemsSource = _cmbVerkiezing.DefaultView;
+        }
+
+        private void Verwijder_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedRow = dbVerkiezing.SelectedItem as DataRowView;
+            if (_dataBase.deleteVerkiezing(selectedRow["VerkiezingId"].ToString()))
+            {
+                MessageBox.Show(selectedRow["VerkiezingId"].ToString() + " Verwijderd");
+                FillDataTable();
+            }
+            else
+            {
+                MessageBox.Show("Mislukt om te verwijderen");
+            }
+        }
+
+        private void Wijzig_Click(object sender, RoutedEventArgs e)
+        {
+            Toevoegen.Content = "Weizig";
+            DataRowView selectedRow = dbVerkiezing.SelectedItem as DataRowView;
+            cmbVerkiezing.Text = selectedRow["Verkiezingsoort"].ToString();
+            tbdate.Text = selectedRow["Datum"].ToString();
+        }
+
         private void Toevoegen_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView selectedRow = dgVerkiezing.SelectedItem as DataRowView;
+            DataRowView selectedRow = dbVerkiezing.SelectedItem as DataRowView;
 
             if (Toevoegen.Content.ToString() == "Toevoegen")
             {
-                if (_DataBase.InsertVerkiezing(cbVerkiezing.SelectedValue.ToString(), cbVerkiezing.Text.ToString(), tbDatum.Text.ToString()))
+                if (_dataBase.InsertVerkiezing(cmbVerkiezing.SelectedValue.ToString(), cmbVerkiezing.Text, tbdate.Text))
                 {
                     FillDataTable();
-                    tbDatum.Text = "";
-                    cbVerkiezing.SelectedIndex = -1;
+                    InitializeSetting();
                 }
                 else
                 {
                     MessageBox.Show("Aanmaken mislukt");
                 }
             }
-            else if (Toevoegen.Content.ToString() == "Wijzigen")
+            else if (Toevoegen.Content.ToString() == "Weizig")
             {
-                if (_DataBase.updateVerkiezing(selectedRow["VerkiezingId"].ToString(), selectedRow["SoortId"].ToString(), cbVerkiezing.SelectedValue.ToString(),tbDatum.Text.ToString()))
+                if (_dataBase.updateVerkiezing(selectedRow["VerkiezingId"].ToString(), cmbVerkiezing.SelectedValue.ToString(), cmbVerkiezing.Text, tbdate.Text))
                 {
                     FillDataTable();
-                    tbDatum.Text = "";
-                    cbVerkiezing.SelectedIndex = -1;
-                    Toevoegen.Content = "Toevoegen";
+                    InitializeSetting();
                 }
                 else
                 {
-                    MessageBox.Show("Wijzigen mislukt");
+                    MessageBox.Show("Aanmaken mislukt");
                 }
             }
         }
-        private void Verwijder_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView selectedRow = dgVerkiezing.SelectedItem as DataRowView;
 
-            if (_DataBase.deleteVerkiezing(selectedRow["VerkiezingId"].ToString()))
-            {
-                MessageBox.Show($"Verkiezing {selectedRow["VerkiezingId"]} verwijderd");
-            }
-            else
-            {
-                MessageBox.Show($"Verwijderen van {selectedRow["VerkiezingId"]} mislukt");
-            }
 
-            FillDataTable();
-        }
-
-        private void Wijzig_Click(object sender, RoutedEventArgs e)
+        private void InitializeSetting()
         {
-            DataRowView verkiezingView = dgVerkiezing.SelectedItem as DataRowView;
-            cbVerkiezing.Text = verkiezingView["Verkiezingsoort"].ToString();
-            tbDatum.Text = verkiezingView["Datum"].ToString();
-            Toevoegen.Content = "Wijzigen";
-        }
-        private void ShowVerkiezing()
-        {
-            DataTable verkiezing = _DataBase.SelectedVerkiezingSoort();
-            cbVerkiezing.ItemsSource = verkiezing.DefaultView;
-        }
-        private void tbDatum_GotFocus(object sender, RoutedEventArgs e)
-        {
-            tbDatum.Text = "";
+            cmbVerkiezing.SelectedIndex = -1;
+            tbdate.Text = "";
+            Toevoegen.Content = "Toevoegen";
         }
     }
 }

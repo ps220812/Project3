@@ -77,3 +77,5 @@ C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\verkiezingspa
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\verkiezing_Page.g.cs
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\verkiezingspartijen_Page.baml
 C:\wamp64\www\pgr\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\verkiezing_Page.baml
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\verkiezing_Page.g.cs
+C:\wamp64\www\projecten\Project3\WPF\Project3_WPF\Project3_WPF\obj\Debug\verkiezing_Page.baml

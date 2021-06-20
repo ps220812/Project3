@@ -16,34 +16,45 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" Grid.Column="1">
+
+        <!--In deze grid komt het toevoegen van database te komen staan-->
+        <Grid Grid.Row="1" Grid.Column="1" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="15*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="5*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
+
+
+            <StackPanel Grid.Row="0">
+                <Label Content="Verkiezing soort" FontSize="15" />
+                <ComboBox x:Name="cmbVerkiezing" DisplayMemberPath="Verkiezingsoort" SelectedValuePath="SoortId" Height="35"/>
+            </StackPanel>
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Verkiezing:" FontSize="15"/>
-                <ComboBox x:Name="cbVerkiezing" DisplayMemberPath="Verkiezingsoort" SelectedValuePath="SoortId" Height="35"/>
+                <Label Content="Date" FontSize="15" />
+                <DatePicker x:Name="tbdate" Height="35" SelectedDateFormat="Short"/>
             </StackPanel>
-            <StackPanel Grid.Row="2">
-                <TextBlock Text="Datum:" FontSize="15"/>
-                <TextBox x:Name="tbDatum" Height="30" GotFocus="tbDatum_GotFocus" />
-            </StackPanel>
-            <Button x:Name="Toevoegen" Grid.Row="3" Height="40" Background="Green" FontSize="20" Foreground="White" Content="Toevoegen" Click="Toevoegen_Click"/>
+
+
+
+            <Button x:Name="Toevoegen" Grid.Row="7" Height="40" Background="Green" FontSize="20" Foreground="White" Content="Toevoegen" Click="Toevoegen_Click" />
+
         </Grid>
 
-        <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dgVerkiezing" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
+        <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dbVerkiezing" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding VerkiezingId}"  Header="VerkiezingId"/>
-                <DataGridTextColumn Binding="{Binding SoortId}"  Header="SoortId"/>
-                <DataGridTextColumn Binding="{Binding Verkiezingsoort}"  Header="VerkiezingSoort"/>
+                <DataGridTextColumn Binding="{Binding VerkiezingId }"  Header="VerkiezingId"/>
+                <DataGridTextColumn Binding="{Binding SoortId }"  Header="SoortId"/>
+                <DataGridTextColumn Binding="{Binding Verkiezingsoort}"  Header="Verkiezingsoort"/>
                 <DataGridTextColumn Binding="{Binding Datum}"  Header="Datum"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -61,5 +72,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
     </Grid>
 </Page>
