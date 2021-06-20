@@ -432,6 +432,32 @@ namespace Project3_WPF.classes
 
             return result;
         }
+
+        public bool UpdateVerkiezinsPartijen(string id,string PartijId, string VerkiezingId)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "UPDATE `verkiezingspartijen` SET `PartijId`=@Parijt,`VerkiezingId`=@Verkiezing WHERE `Id` =@id;";
+                command.Parameters.AddWithValue("@Parijt", PartijId);
+                command.Parameters.AddWithValue("@Verkiezing", VerkiezingId);
+                command.Parameters.AddWithValue("@id", id);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch (System.Exception)
+            {
+                //Problem with the database
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return result;
+        }
+
         // End
         #endregion
         #region DELETE function
@@ -549,6 +575,31 @@ namespace Project3_WPF.classes
 
             return result;
         }
+
+        public bool DeleteVerkiezingsPartijen(string id)
+        {
+            bool result = false;
+            try
+            {
+                _connection.Open();
+                MySqlCommand command = _connection.CreateCommand();
+                command.CommandText = "DELETE FROM `verkiezingspartijen` WHERE `Id` = @Id;";
+                command.Parameters.AddWithValue("@Id", id);
+                int nrOfRowsAffected = command.ExecuteNonQuery();
+                result = (nrOfRowsAffected != 0);
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return result;
+        }
+
         // End
         #endregion
     }

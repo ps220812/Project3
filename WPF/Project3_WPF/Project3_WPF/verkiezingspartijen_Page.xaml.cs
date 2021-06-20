@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Project3_WPF.classes;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Data;
-using Project3_WPF.classes;
 namespace Project3_WPF
 {
     /// <summary>
@@ -33,12 +29,25 @@ namespace Project3_WPF
 
         private void Wijzig_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView selectedRow = DbVerkiezingPartijen.SelectedItem as DataRowView;
+            Toevoegen.Content = "Weizigen";
+            cmbPartij.SelectedValue = selectedRow["PartijId"];
+            cmbVerkiezing.SelectedValue = selectedRow["VerkiezingId"];
         }
 
         private void Verwijder_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView selectedRow = DbVerkiezingPartijen.SelectedItem as DataRowView;
+            if (_DataBase.DeleteVerkiezingsPartijen(selectedRow["Id"].ToString()))
+            {
+                MessageBox.Show("Verwijderd");
+                FillDataTable();
+                InitializeSetting();
+            }
+            else
+            {
+                MessageBox.Show("Mislukt");
+            }
         }
 
         private void Toevoegen_Click(object sender, RoutedEventArgs e)
@@ -47,34 +56,43 @@ namespace Project3_WPF
 
             if (Toevoegen.Content.ToString() == "Toevoegen")
             {
-                if (_DataBase.InsertVerkiezingsPartijen(cmbPartij.SelectedValue.ToString(),cmbVerkiezing.SelectedValue.ToString()))
+                if (_DataBase.InsertVerkiezingsPartijen(cmbPartij.SelectedValue.ToString(), cmbVerkiezing.SelectedValue.ToString()))
                 {
                     FillDataTable();
+                    InitializeSetting();
                 }
                 else
                 {
                     MessageBox.Show("Aanmaken mislukt");
                 }
             }
-            else if (Toevoegen.Content.ToString() == "Wijzigen")
+            else if (Toevoegen.Content.ToString() == "Weizigen")
             {
-                /*if ()
+                if (_DataBase.UpdateVerkiezinsPartijen(selectedRow["Id"].ToString(), cmbPartij.SelectedValue.ToString(), cmbVerkiezing.SelectedValue.ToString()))
                 {
                     FillDataTable();
-                    Toevoegen.Content = "Toevoegen";
+                    InitializeSetting();
                 }
                 else
                 {
                     MessageBox.Show("Aanmaken mislukt");
-                }*/
+                }
             }
         }
 
         private void FillComboBoxen()
         {
             DataTable Partij = _DataBase.SelectedPartij();
+            DataTable Verkiezing = _DataBase.SelectedVerkiezing();
             cmbPartij.ItemsSource = Partij.DefaultView;
+            cmbVerkiezing.ItemsSource = Verkiezing.DefaultView;
+        }
 
+        private void InitializeSetting()
+        {
+            cmbVerkiezing.SelectedIndex = -1;
+            cmbPartij.SelectedIndex = -1;
+            Toevoegen.Content = "Toevoegen";
         }
     }
 }
