@@ -75,7 +75,7 @@ namespace Project3_WPF
                 }
                 else
                 {
-                    MessageBox.Show("Aanmaken mislukt");
+                    MessageBox.Show("Aanmaken mislukt, controleer of de partij niet al bij een andere database gebruikt");
                 }
             }
         }

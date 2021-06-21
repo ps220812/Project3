@@ -52,8 +52,8 @@
 
         <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dbVerkiezing" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding VerkiezingId }"  Header="VerkiezingId"/>
-                <DataGridTextColumn Binding="{Binding SoortId }"  Header="SoortId"/>
+                <DataGridTextColumn Binding="{Binding VerkiezingId }"  Header="Verkiezing Id"/>
+                <DataGridTextColumn Binding="{Binding SoortId }"  Header="Soort Id"/>
                 <DataGridTextColumn Binding="{Binding Verkiezingsoort}"  Header="Verkiezingsoort"/>
                 <DataGridTextColumn Binding="{Binding Datum}"  Header="Datum"/>
                 <DataGridTemplateColumn>

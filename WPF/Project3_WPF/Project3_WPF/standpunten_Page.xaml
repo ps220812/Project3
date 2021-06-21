@@ -54,10 +54,10 @@
 
         <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dgStandpunten" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding StandpuntId}"  Header="Standpunt id"/>
-                <DataGridTextColumn Binding="{Binding PartijId}"  Header="Partij id"/>
-                <DataGridTextColumn Binding="{Binding PartijName}"  Header="PartijName"/>
-                <DataGridTextColumn Binding="{Binding ThemaId}"  Header="ThemaId"/>
+                <DataGridTextColumn Binding="{Binding StandpuntId}"  Header="Standpunt Id"/>
+                <DataGridTextColumn Binding="{Binding PartijId}"  Header="Partij Id"/>
+                <DataGridTextColumn Binding="{Binding PartijName}"  Header="Partij Naam"/>
+                <DataGridTextColumn Binding="{Binding ThemaId}"  Header="Thema Id"/>
                 <DataGridTextColumn Binding="{Binding Thema}"  Header="Thema"/>
                 <DataGridTextColumn Binding="{Binding Standpunt}"  Header="Standpunt"/>
                 <DataGridTemplateColumn>

@@ -26,7 +26,6 @@ namespace Project3_WPF
             mainFrame.Content = new Partijen_Page();
             Title.Content = "Partijen";
         }
-
         private void Btn_partijen_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new Partijen_Page();
@@ -42,26 +41,26 @@ namespace Project3_WPF
         private void Btn_themas_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new Themas_Page();
-            Title.Content = "thema's";
+            Title.Content = "Thema's";
         }
         private void Btn_verkiezingsoort_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new VerkiezingSoort_Page();
-            Title.Content = "verkiezingsoorten";
+            Title.Content = "Verkiezingsoorten";
         }
         private void Btn_verkiezing_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new verkiezing_Page();
-            Title.Content = "verkiezing";
+            Title.Content = "Verkiezing";
+        }
+        private void Btn_verkiezingpartijen_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new verkiezingspartijen();
+            Title.Content = "Verkiezingpartijen";
         }
         public void HideWindow()
         {
             this.Close();
-        }
-
-        private void Btn_verkiezingpartijen_Click(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Content = new verkiezingspartijen( );
         }
     } 
 }

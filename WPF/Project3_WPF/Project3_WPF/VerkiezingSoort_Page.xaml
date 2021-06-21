@@ -36,8 +36,8 @@
 
         <DataGrid Grid.Row="1" Grid.Column="3" x:Name="dgVerkiezingSoort" SelectionMode="Single" CanUserAddRows="False" AutoGenerateColumns="False" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SoortId}"  Header="SoortId"/>
-                <DataGridTextColumn Binding="{Binding Verkiezingsoort}"  Header="VerkiezingSoort"/>
+                <DataGridTextColumn Binding="{Binding SoortId}"  Header="Soort Id"/>
+                <DataGridTextColumn Binding="{Binding Verkiezingsoort}"  Header="Verkiezingsoort"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -68,10 +68,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding PartijId}"  Header="id"/>
                 <DataGridTextColumn Binding="{Binding PartijName}"  Header="Partij naam"/>
-                <DataGridTextColumn Binding="{Binding Adres}"  Header="Adress"/>
+                <DataGridTextColumn Binding="{Binding Adres}"  Header="Adres"/>
                 <DataGridTextColumn Binding="{Binding Postcode}"  Header="Postcode"/>
                 <DataGridTextColumn Binding="{Binding Gemeente}"  Header="Gemeente"/>
-                <DataGridTextColumn Binding="{Binding EmailAdres}"  Header="EmailAdres"/>
+                <DataGridTextColumn Binding="{Binding EmailAdres}"  Header="Emailadres"/>
                 <DataGridTextColumn Binding="{Binding Telefoonnummer}"  Header="Telefoonnummer"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

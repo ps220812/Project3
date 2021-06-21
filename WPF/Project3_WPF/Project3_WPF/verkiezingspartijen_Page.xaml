@@ -53,7 +53,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}"  Header="id"/>
                 <DataGridTextColumn Binding="{Binding PartijId}"  Header="Partij"/>
-                <DataGridTextColumn Binding="{Binding VerkiezingId}"  Header="Verziezing"/>
+                <DataGridTextColumn Binding="{Binding VerkiezingId}"  Header="Verkiezing"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
