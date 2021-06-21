@@ -9,6 +9,11 @@
   height: 500px;
 }
 
+.row-2{
+  display: flex;
+  justify-content: space-between;
+}
+
 .col-1{
   flex-basis: 50%;
   max-width: 400px;
@@ -22,7 +27,23 @@
   padding: 20px;
 }
 
-h1{
+.col-2{
+  flex-basis: 30%;
+  min-width: 250px;
+  height: 60%;
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.col-3{
+  width: 100%;
+  min-height: 200px;
+  background-color: lightsteelblue;
+  padding: 30px;
+  border-radius: 13px;
+}
+
+.titel{
   justify-self: center;
   align-items: center;
   font-size: 50px;
@@ -36,16 +57,28 @@ h1{
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.col-2{
-  flex-basis: 30%;
-  min-width: 250px;
-  height: 60%;
-  margin-bottom: 30px;
-  align-self: center;
+h1{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Parijten-btn{
+  background-color: lightblue; 
+  border: none;
+  color: white;
+  padding: 15px 52px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  border-radius: 13px;
+  width: 150px;
+  min-width: 100px;
+  margin: 10px 5px
 }
 
 .btnStart{
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   border: none;
   color: white;
   padding: 15px 52px;
@@ -54,4 +87,30 @@ h1{
   display: inline-block;
   font-size: 20px;
   border-radius: 13px;
+}
+
+.Partijen{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info_Partij{
+  border: solid 1px black;
+  border-radius: 13px;
+  padding: 25px 10px;
+  width: 400px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column; 
+  background-color: lightblue;
+  box-shadow: 13px 18px #b3c9ce;
+  color: white;
+}
+
+.Contact{
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
 }

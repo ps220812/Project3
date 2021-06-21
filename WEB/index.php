@@ -33,11 +33,29 @@ $db = new VerkiezingenDB();
         <div class="container">
             <div class="row">
                 <div class="col-1">
-                    <h1>Stemwijzer</h1>
+                    <h1 class="titel">Stemwijzer</h1>
                     <p class="pText">Welkom op de stemwijzer. Deze pagina is bedoelt om u te helpen met het maken van uw keuze tijdens de verkiezingen.</p>
                 </div>
                 <div class="col-2">
                     <button class="btnStart">Start</button>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="col-3">
+                    <h1>Deze partijen doen mee</h1>
+                    <div class="Partijen">
+                        
+                            <?php
+                            $rows = $db->selectPartijen();
+                            foreach ($rows as $row){
+                                echo "<form method='POST' action='contact.php'>
+                                <input name='ParijtId' type='hidden' value='$row[PartijId]'/>
+                                <input type='submit' id='$row[PartijId]' class='Parijten-btn' value='$row[PartijName]'/></form>
+                                ";
+                            }
+                            ?>
+
+                    </div>
                 </div>
             </div>
         </div>

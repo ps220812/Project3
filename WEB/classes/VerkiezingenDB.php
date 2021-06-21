@@ -20,7 +20,7 @@
         function selectPartij($id){
             try{
                 $pdo = new PDO(self::DSN,self::USER,self::PASSWD);
-                $statement = $pdo->prepare("SELECT*FROM partij WHERE id=PartijId;");
+                $statement = $pdo->prepare("SELECT * FROM `partij` WHERE `PartijId` = :id;");
                 $statement->bindvalue(":id",$id,PDO::PARAM_INT);
                 $statement->execute();
                 $rows = $statement->fetchall(PDO::FETCH_ASSOC);
