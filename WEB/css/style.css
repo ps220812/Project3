@@ -1,30 +1,57 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: sticky;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: lightblue;
-    color: black;
-  }
-  
-  .active {
-    background-color: lightskyblue;
-    color: black;
-  }
+.container{
+  width: 1020px;
+  margin: auto;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.col-1{
+  flex-basis: 50%;
+  max-width: 400px;
+  height: 50%;  
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  box-shadow: 5px 10px #888888;
+  border-radius: 13px;
+  padding: 20px;
+}
+
+h1{
+  justify-self: center;
+  align-items: center;
+  font-size: 50px;
+  color: lightblue;
+  align-self: center;
+}
+
+.pText{
+  align-self: flex-end;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.col-2{
+  flex-basis: 30%;
+  min-width: 250px;
+  height: 60%;
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.btnStart{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 52px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 13px;
+}
