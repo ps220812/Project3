@@ -21,7 +21,7 @@ $db = new VerkiezingenDB();
                 <nav>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="themas.php">Themas</a></li>
+                        <li><a href="thema.php">Themas</a></li>
                         <li><a href="kieswijzer.php">Stem</a></li>
                     </ul>
                 </nav>

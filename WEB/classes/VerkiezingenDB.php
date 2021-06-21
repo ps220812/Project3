@@ -17,6 +17,20 @@
                 return false;
             }
         }
+
+        function selectThemas(){
+            try{
+                $pdo = new PDO(self::DSN,self::USER,self::PASSWD);
+                $statement = $pdo->prepare("SELECT*FROM thema;");
+                $statement->execute();
+                $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+                return $rows;
+            }
+            catch(PDOException $e){
+                return false;
+            }
+        }
+
         function selectPartij($id){
             try{
                 $pdo = new PDO(self::DSN,self::USER,self::PASSWD);

@@ -9,7 +9,7 @@ $db = new VerkiezingenDB();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Themas</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
 </head>
@@ -31,19 +31,18 @@ $db = new VerkiezingenDB();
 
     <main class="container">
         <div class="row">
-            <div class="info_Partij">
+            <div class="mini-row">
                 <?php
-                $row = $db->selectPartij($_POST['ParijtId']);
-                echo "<h2>$row[PartijName]</h2>
-                <p>Adres: $row[Adres]</p>
-                <p>Postcode: $row[Postcode]</p>
-                <p>Gemeente: $row[Gemeente]</p>
-                <p>Email: $row[EmailAdres]</p>
-                <p>Telefoonnummer: $row[Telefoonnummer]</p>
-                ";
+                $rows = $db->selectThemas();
+                foreach ($rows as $row) {
+                    echo "<div class='mini-container'>
+                    <h2 class='themaTitel'>$row[Thema]</h2>
+                    </div>
+                    ";
+                }
+
                 ?>
             </div>
-            <div class="Contact">Contact</div>
 
         </div>
     </main>
