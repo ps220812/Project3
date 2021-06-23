@@ -34,7 +34,7 @@ $db = new VerkiezingenDB();
             <div class="Contact">Contact</div>
             <div class="info_Partij">
                 <?php
-                $row = $db->selectPartij($_POST['ParijtId']);
+                $row = $db->selectPartij($_POST['PartijId']);
                 echo "<h2>$row[PartijName]</h2>
                 <p>Adres: $row[Adres]</p>
                 <p>Postcode: $row[Postcode]</p>
