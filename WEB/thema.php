@@ -35,9 +35,11 @@ $db = new VerkiezingenDB();
                 <?php
                 $rows = $db->selectThemas();
                 foreach ($rows as $row) {
-                    echo "<div class='mini-container'>
-                    <h2 class='themaTitel'>$row[Thema]</h2>
-                    </div>
+                    echo "<form method='post' action='standpunt.php' >
+                    <div class='mini-container'>
+                    <input type='submit' class='themaTitel' value='$row[Thema]'/>
+                    <input type='hidden' value='$row[ThemaId]' name='thema_id' />
+                    </div></form>
                     ";
                 }
 

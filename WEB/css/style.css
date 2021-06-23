@@ -133,14 +133,23 @@ h1{
 
 .themaTitel{
   text-align: center;
+  background-color:rgb(179, 236, 245);
+  font-size: 25px;
+  border: 0px solid;
+  color:rgb(6, 6, 90);
 }
 
 .mini-container{
   width: 325px;
   max-width: 450px;
   height: 200px;
-  border: 1px solid blue;
+  border: 1px solid ;
   border-radius: 13px;
+  background-color:rgb(179, 236, 245);
+  color: rgb(13, 13, 96);
+  display: flex;
+  align-items: center;
+  justify-content:center;
   transition: transform 0.5s;
 }
 .mini-container:hover{
