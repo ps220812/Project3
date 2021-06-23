@@ -31,6 +31,15 @@
             }
         }
 
+        function selectStandpunt($id){
+            $pdo = new PDO(self::DSN,self::USER,self::PASSWD);
+            $statement = $pdo->prepare("SELECT * FROM `standpunten` WHERE `ThemaId` = :id;");
+            $statement->bindvalue(":id",$id,PDO::PARAM_INT);
+            $statement->execute();
+            $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+            return $rows[0];
+        }
+
         function selectPartij($id){
             try{
                 $pdo = new PDO(self::DSN,self::USER,self::PASSWD);
