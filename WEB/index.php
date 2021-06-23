@@ -49,8 +49,8 @@ $db = new VerkiezingenDB();
                             $rows = $db->selectPartijen();
                             foreach ($rows as $row){
                                 echo "<form method='POST' action='contact.php'>
-                                <input name='ParijtId' type='hidden' value='$row[PartijId]'/>
-                                <input type='submit' id='$row[PartijId]' class='Parijten-btn' value='$row[PartijName]'/></form>
+                                <input name='PartijId' type='hidden' value='$row[PartijId]'/>
+                                <input type='submit' id='$row[PartijId]' class='Partijen-btn' value='$row[PartijName]'/></form>
                                 ";
                             }
                             ?>

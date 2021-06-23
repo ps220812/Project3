@@ -70,7 +70,7 @@ h1{
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.Parijten-btn{
+.Partijen-btn{
   background-color: lightblue; 
   border: none;
   color: white;
@@ -81,12 +81,13 @@ h1{
   font-size: 20px;
   border-radius: 13px;
   width: 200px;
+  height: 50px;
   min-width: 100px;
   margin: 10px 5px;
   transition: transform 0.5s;
 }
 
-.Parijten-btn:hover{
+.Partijen-btn:hover{
   transform: translateY(-10px);
 }
 

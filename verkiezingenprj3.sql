@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 22, 2021 at 12:13 PM
+-- Generation Time: Jun 23, 2021 at 11:56 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -73,7 +73,23 @@ CREATE TABLE IF NOT EXISTS `standpunten` (
   PRIMARY KEY (`StandpuntId`),
   KEY `PartijId` (`PartijId`),
   KEY `ThemaId` (`ThemaId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `standpunten`
+--
+
+INSERT INTO `standpunten` (`StandpuntId`, `PartijId`, `PartijName`, `ThemaId`, `Thema`, `Standpunt`) VALUES
+(1, 2, 'PVV', 2, 'Asielzoekers', 'Ons land is veel te soepel voor asielzoekers. '),
+(2, 3, 'VVD', 1, 'VVD', 'Toptalenten uit het buitenland zijn van harte welkom'),
+(3, 11, 'GroenLinks', 5, 'Klimaat', 'Als we niet snel in actie komen, laten we niet alleen een onleefbare wereld achter, maar wordt de aarde straks ook onbewoonbaar'),
+(4, 7, 'CDA', 3, 'Cultuur', 'Corona heeft de cultuur sector hard te pakken gehad en wij moeten inzetten op een fors economisch herstel van de sector'),
+(5, 5, 'Forum voor Democratie', 7, 'Nederland in de EU', 'Nederland moet net zoals Engeland de EU uit'),
+(6, 9, 'Piratenpartij', 8, 'Veiligheid', 'Gebruiker gegevens moeten sterker worden beveiligd'),
+(7, 6, 'PvdA', 9, 'Werkgelegenheid', 'Voor iedereen die door de corona crisis geen werk meer heeft moet er werkgarantie komen'),
+(8, 10, 'D66', 6, 'Onderwijs', 'We moeten meer investeren in het ontwikkelen van onze jeugd'),
+(9, 12, 'SP', 10, 'Zorg', 'De zorg zou geen markt moeten zijn met concurrerende zorgverzekeraars, we moeten in plaats daarvan een nationale zorgfonds maken waarvan de premie op inkomst gebaseerd is'),
+(10, 8, 'Volt', 4, 'Handel en economie', 'De Europese landen moeten samenwerken om een gezamelijke Europees belastingssysteem te maken');
 
 -- --------------------------------------------------------
 
@@ -99,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `thema` (
   `ThemaId` int(11) NOT NULL AUTO_INCREMENT,
   `Thema` varchar(200) NOT NULL,
   PRIMARY KEY (`ThemaId`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `thema`
@@ -130,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `verkiezing` (
   `Datum` date DEFAULT NULL,
   PRIMARY KEY (`VerkiezingId`),
   KEY `SoortId` (`SoortId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -142,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `verkiezingsoort` (
   `SoortId` int(11) NOT NULL AUTO_INCREMENT,
   `Verkiezingsoort` varchar(100) NOT NULL,
   PRIMARY KEY (`SoortId`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `verkiezingsoort`
@@ -169,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `verkiezingspartijen` (
   PRIMARY KEY (`Id`),
   KEY `VerkiezingId` (`VerkiezingId`),
   KEY `PartijId` (`PartijId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Constraints for dumped tables
