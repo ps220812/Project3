@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 22, 2021 at 12:04 PM
+-- Generation Time: Jun 22, 2021 at 12:13 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `verkiezingenprj3`
 --
+CREATE DATABASE IF NOT EXISTS `verkiezingenprj3` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `verkiezingenprj3`;
 
 -- --------------------------------------------------------
 
@@ -27,7 +29,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `partij`
 --
 
-DROP TABLE IF EXISTS `partij`;
 CREATE TABLE IF NOT EXISTS `partij` (
   `PartijId` int(11) NOT NULL AUTO_INCREMENT,
   `PartijName` varchar(200) NOT NULL,
@@ -62,7 +63,6 @@ INSERT INTO `partij` (`PartijId`, `PartijName`, `Adres`, `Postcode`, `Gemeente`,
 -- Table structure for table `standpunten`
 --
 
-DROP TABLE IF EXISTS `standpunten`;
 CREATE TABLE IF NOT EXISTS `standpunten` (
   `StandpuntId` int(11) NOT NULL AUTO_INCREMENT,
   `PartijId` int(11) NOT NULL,
@@ -81,7 +81,6 @@ CREATE TABLE IF NOT EXISTS `standpunten` (
 -- Table structure for table `stem`
 --
 
-DROP TABLE IF EXISTS `stem`;
 CREATE TABLE IF NOT EXISTS `stem` (
   `standpunt_id` int(11) NOT NULL,
   `naam gebruiker` varchar(255) NOT NULL,
@@ -96,7 +95,6 @@ CREATE TABLE IF NOT EXISTS `stem` (
 -- Table structure for table `thema`
 --
 
-DROP TABLE IF EXISTS `thema`;
 CREATE TABLE IF NOT EXISTS `thema` (
   `ThemaId` int(11) NOT NULL AUTO_INCREMENT,
   `Thema` varchar(200) NOT NULL,
@@ -125,7 +123,6 @@ INSERT INTO `thema` (`ThemaId`, `Thema`) VALUES
 -- Table structure for table `verkiezing`
 --
 
-DROP TABLE IF EXISTS `verkiezing`;
 CREATE TABLE IF NOT EXISTS `verkiezing` (
   `VerkiezingId` int(11) NOT NULL AUTO_INCREMENT,
   `SoortId` int(11) NOT NULL,
@@ -141,7 +138,6 @@ CREATE TABLE IF NOT EXISTS `verkiezing` (
 -- Table structure for table `verkiezingsoort`
 --
 
-DROP TABLE IF EXISTS `verkiezingsoort`;
 CREATE TABLE IF NOT EXISTS `verkiezingsoort` (
   `SoortId` int(11) NOT NULL AUTO_INCREMENT,
   `Verkiezingsoort` varchar(100) NOT NULL,
@@ -166,7 +162,6 @@ INSERT INTO `verkiezingsoort` (`SoortId`, `Verkiezingsoort`) VALUES
 -- Table structure for table `verkiezingspartijen`
 --
 
-DROP TABLE IF EXISTS `verkiezingspartijen`;
 CREATE TABLE IF NOT EXISTS `verkiezingspartijen` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `PartijId` int(11) NOT NULL,
