@@ -31,6 +31,7 @@ $db = new VerkiezingenDB();
 
     <main class="container">
         <div class="row">
+            <div class="Contact">Contact</div>
             <div class="info_Partij">
                 <?php
                 $row = $db->selectPartij($_POST['ParijtId']);
@@ -43,7 +44,7 @@ $db = new VerkiezingenDB();
                 ";
                 ?>
             </div>
-            <div class="Contact">Contact</div>
+
 
         </div>
     </main>

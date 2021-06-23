@@ -78,11 +78,16 @@ h1{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 13px;
-  width: 150px;
+  width: 200px;
   min-width: 100px;
-  margin: 10px 5px
+  margin: 10px 5px;
+  transition: transform 0.5s;
+}
+
+.Parijten-btn:hover{
+  transform: translateY(-10px);
 }
 
 .btnStart{
@@ -114,13 +119,16 @@ h1{
   background-color: lightblue;
   box-shadow: 13px 18px #b3c9ce;
   color: white;
+  margin-bottom: 70px;
+}
+
+.info_Partij p{
+  font-size: 20px;
 }
 
 .Contact{
   font-size: 50px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  display: flex;
-  justify-content: center;
 }
 
 .themaTitel{
