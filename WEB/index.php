@@ -37,7 +37,7 @@ $db = new VerkiezingenDB();
                     <p class="pText">Welkom op de stemwijzer. Deze pagina is bedoelt om u te helpen met het maken van uw keuze tijdens de verkiezingen.</p>
                 </div>
                 <div class="col-2">
-                    <button class="btnStart">Start</button>
+                    <form method='POST' action="stemwijzer.php"><button class="btnStart">Start de stemwijzer</button></form>
                 </div>
             </div>
             <div class="row-2">

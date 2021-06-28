@@ -47,7 +47,7 @@ namespace Project3_WPF
             }
             if (Btn_ToevoegenPartij.Content.ToString() == "Weizig")
             {
-                if (partij.UpdatePartij(partijView["PartijId"].ToString(),naam.Text.ToString(), adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
+                if (partij.UpdatePartij(partijView["PartijId"].ToString(), naam.Text.ToString(), adress.Text.ToString(), postcode.Text.ToString(), gemeente.Text.ToString(), email.Text.ToString(), telefoonnummer.Text.ToString()))
                 {
                     FillDataTable();
                 }
