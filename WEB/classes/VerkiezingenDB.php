@@ -4,7 +4,7 @@ class VerkiezingenDB
     const DSN = "mysql:host=localhost;dbname=verkiezingenprj3";
     const USER = "root";
     const PASSWD = "";
-    
+
     function selectPartijen()
     {
         try {
@@ -60,21 +60,16 @@ class VerkiezingenDB
     }
 
     function stemWijzer()
-    {   
+    {
         $id = 1;
         try {
             $pdo = new PDO(self::DSN, self::USER, self::PASSWD);
-            $statement = $pdo->prepare("SELECT * FROM `standpunten` WHERE `StandpuntId` = :id;");
-            $statement->bindvalue(":id", $id, PDO::PARAM_INT);
+            $statement = $pdo->prepare("SELECT * FROM `standpunten` WHERE 1");
             $statement->execute();
             $rows = $statement->fetchall(PDO::FETCH_ASSOC);
             return $rows[0];
         } catch (PDOException $e) {
             return false;
         }
-    }
-    function volgendeStandpunt()
-    {
-
     }
 }

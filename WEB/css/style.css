@@ -188,3 +188,8 @@ h1{
   width: 200px;
   margin-bottom: 10px;
 }
+.Srow{
+  display: flex;
+  justify-content: space-between;
+  min-height: 250px;
+}
