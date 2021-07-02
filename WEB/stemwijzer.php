@@ -9,7 +9,9 @@ $db = new VerkiezingenDB();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Themas</title>
+    <title>Stemwijzer
+
+    </title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
 </head>
@@ -40,19 +42,35 @@ $db = new VerkiezingenDB();
                 $rows = $db->stemwijzer();
                 $rbid = 1;
                 foreach ($rows as $row) {
-                    echo "<tr>
-                    <td>$row[Standpunt]</td>
-
-                    <td><input type='Radio' name='radio$rbid' value='Eens'/></td>
-                    <td><input type='Radio' name='radio$rbid' value='Oneens'/></td>
-                    
-                </tr>";
-                $rbid++;
+                    echo "
+                    <tr>
+                        <td><p class='Scol-1'>$row[Standpunt]</p></td>
+                        <td><input type='Radio' name='radio$rbid' value='Eens'/></td>
+                        <td><input type='Radio' name='radio$rbid' value='Oneens'/></td>
+                    </tr>";
+                    $rbid++;
                 }
                 ?>
             </table>
+            <form method="POST" action="result.php">
+                <h3>Vul hier uw naam in</h3>
+                <input type="text" name="naamGebruiker" id="naamGebruiker" onkeyup="enableBtn(this)">
+                <input type="submit" value="Bekijk Resultaat" id="btnResult" name="btnResult" disabled>
+            </form>
+            <script type="text/javascript">
+                function enableBtn(naamGebruiker){
+                    var Result = document.getElementById("btnResult");
+                    if(naamGebruiker.value != "")
+                    {
+                        Result.disabled = false;
+                    }
+                    else
+                    {
+                        Result.disabled = true;
+                    }
+                };
+            </script>
         </div>
-
     </main>
 </body>
 
