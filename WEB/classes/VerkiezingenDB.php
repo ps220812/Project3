@@ -61,13 +61,12 @@ class VerkiezingenDB
 
     function stemWijzer()
     {
-        $id = 1;
         try {
             $pdo = new PDO(self::DSN, self::USER, self::PASSWD);
-            $statement = $pdo->prepare("SELECT * FROM `standpunten` WHERE 1");
+            $statement = $pdo->prepare("SELECT * FROM `standpunten` ");
             $statement->execute();
             $rows = $statement->fetchall(PDO::FETCH_ASSOC);
-            return $rows[0];
+            return $rows;
         } catch (PDOException $e) {
             return false;
         }

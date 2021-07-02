@@ -30,3 +30,7 @@ a{
     padding-left: 20px;
     margin-bottom: 15vh;
 }
+
+tr th{
+    text-align: left;
+}

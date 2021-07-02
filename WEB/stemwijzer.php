@@ -30,33 +30,29 @@ $db = new VerkiezingenDB();
     </header>
     <main>
         <div class="container">
-            <?php
-            $rows = $db->stemWijzer();
-            foreach ($rows as $row) {
-            ?>
-                <div class="Srow">
-                    <div class="Scol-1">
-                        <div class="Scol-1">
-                            <table>
-                                <?php
-                                $rows = $db->stemWijzer();
-                                echo "   <tr>
-                                    <td>$rows[Standpunt]</td>
-                                </tr>
-                            ";
-                                ?>
-                            </table>
-                        </div>
-                        <div class="Scol-2">
-                            <form method='POST' action="stemwijzer.php"><input type='submit' class="btnStem" value='Eens' /></form>
-                            <form method='POST' action="stemwijzer.php"><input type='submit' class="btnStem" value='Oneens' /></form>
-                        </div>
-                    </div>
-                </div>
-            <?php
-            }
-            ?>
+            <table class="table">
+                <tr>
+                    <th>Standpunt</th>
+                    <th>Eens</th>
+                    <th>Oneens</th>
+                </tr>
+                <?php
+                $rows = $db->stemwijzer();
+                $rbid = 1;
+                foreach ($rows as $row) {
+                    echo "<tr>
+                    <td>$row[Standpunt]</td>
+
+                    <td><input type='Radio' name='radio$rbid' value='Eens'/></td>
+                    <td><input type='Radio' name='radio$rbid' value='Oneens'/></td>
+                    
+                </tr>";
+                $rbid++;
+                }
+                ?>
+            </table>
         </div>
+
     </main>
 </body>
 
